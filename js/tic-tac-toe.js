@@ -10,93 +10,187 @@
 // draw message.
 // player 1 wins message.
 
-let winningCombo = { // 3 row win, 3 columns win, 2 diagonal win.
-  win1: $('#1, #2, #3').length === 3, // first row across
-  win2: $('#4, #5, #6').length === 3, // second row across
-  win3: $('#7, #8, #9').length === 3, // third row across
-  win4: $('#1, #4, #7').length === 3, // first row down
-  win5: $('#2, #5, #7').length === 3, // second row down
-  win6: $('#3, #6, #9').length === 3, // third row down
-  win7: $('#1, #5, #9').length === 3, // cross from #1 to #9
-  win8: $('#3, #5, #7').length === 3, // cross from #3 to #7
-}
-
 // GAME FUNCTION = get the board running first. Once clicked on a box, add the players icon ( X or O ).
 // function is : when a 'player' chooses a box out of 9, return ( X or O ). Give a class to the boxes chosen by each player.
 let turn = 1;
-// let firstPlayer = $('#player1');
-// let secondPlayer = $('#player2');
-let newGame = 0;
-
+let gameCount = 0;
+let click = 0;
+let winningPlayer;
+let player1count = 0;
+let player2count = 0;
+let noWin = 0;
 
 $(document).ready( function () {
-  let turn = 1;
-  let click = 0; // click variable to count click numbers
-  let newGame = 0;
 
-  $( ".box" ).one( 'click', function () { // added 'one' and works but can not restart or refresh the board. Make function. .unbind()?
-    click++ // calling call funtion each time a click has been made
-    if ( turn === 1 ) {
-      console.log("player 1");
-      turn = 2;
-      $(this).addClass('X').text('X');
-      checkWinner("X");
-    } else {
-      console.log("player 2");
-      turn = 1;
-      $(this).addClass('O').text('O');
-      checkWinner("O");
+  // 1. clear board function
+  $('#newgame').on('click', function () {
+    $('.box').removeClass('X O').empty();
+  });
+
+  // 2. new game / restart game function
+  $('#newgame').on('click', function () {
+    $('.box').removeClass('X O').empty();
+    click = 0;
+    winningPlayer = undefined;
+  });
+
+  // 3. restart scoreboard / game function
+  const scoreBoard = function ( score ) {
+    let player1Wins = $('#player1-score')
+    let player2Wins = $('#player2-score')
+    let noWin = $('#noplayer-score')
+    if ( score === 'X' ) {
+      player1Wins.html(`Player 1 : ${player1count}`)
+    } else if ( score === 'O' ) {
+      player2Wins.html(`Player 2 : ${player2count}`)
+    }
+  };
+
+  // -----------------------WORKING CODES BELOW----------------------//
+
+  $( ".box" ).on( 'click', function () {
+    if (!$(this).hasClass('X') && !$(this).hasClass('O') && winningPlayer === undefined ) {
+      click++ // adding each time a click has been made
+      console.log(click);
+      if ( click >= 9 ) {
+        let drawCount = $('#noplayer-score')
+        noWin += 1;
+        drawCount.html(`Draw : ${noWin}`)
+      }
+      if ( turn === 1 ) {
+        console.log("player 1");
+        turn = 2;
+        $(this).addClass('X').text('X');
+        checkWinner("X");
+      } else {
+        console.log("player 2");
+        turn = 1;
+        $(this).addClass('O').text('O');
+        checkWinner("O");
+      }
     }
   });
 
-  // WINNING COMBO : PLAYER 1
-  const checkWinner = function (symbol) {
+  // WINNING COMBINATION
+  const checkWinner = function ( symbol ) {
 
     if ($('#1').hasClass(symbol) &&
     $('#2').hasClass(symbol) &&
     $('#3').hasClass(symbol)) {
+      winningPlayer = `${symbol}`;
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#4').hasClass(symbol) &&
     $('#5').hasClass(symbol) &&
     $('#6').hasClass(symbol)) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#7').hasClass(symbol) &&
     $('#8').hasClass(symbol) &&
     $('#9').hasClass(symbol)) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#1').hasClass(symbol) &&
     $('#4').hasClass(symbol) &&
     $('#7').hasClass(symbol)) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#2').hasClass(symbol) &&
     $('#5').hasClass(symbol) &&
     $('#8').hasClass(symbol) ) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#3').hasClass(symbol) &&
     $('#6').hasClass(symbol) &&
     $('#9').hasClass(symbol) ) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#1').hasClass(symbol) &&
     $('#5').hasClass(symbol) &&
     $('#9').hasClass(symbol) ) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
     } else if ($('#3').hasClass(symbol) &&
     $('#5').hasClass(symbol) &&
     $('#7').hasClass(symbol) ) {
+      winningPlayer = `${symbol}`
+      if ( symbol === 'X' ) {
+        player1count += 1;
+        scoreBoard('X')
+      } else if ( symbol === 'O' ) {
+        player2count += 1;
+        scoreBoard('O');
+      }
+
       console.log(`Player ${symbol} wins!`);
       return true;
 
@@ -107,18 +201,4 @@ $(document).ready( function () {
       return false;
     }
   };
-
-
-
-const restartGame = function ( restart ) {
-  newGame++;
-$( ".box" ).one( 'click', function () {
-  if ( click >= 9 ) {
-    $(this).unbind($(`button.newgame`));
-  }
-})
-}
-
-
-
 });
