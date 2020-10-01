@@ -40,6 +40,21 @@ h1 {
   text-align: center;
 }
 
+
+.board {
+  margin: 0 auto;
+  width: 60vh;
+  height: 60vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+  border: 1px solid white;
+  background-color: black;
+  box-shadow: pink 20px 15px;
+}
+
+
 .scoreboard-container ul {
   text-align: center;
   font-family: 'Bungee Outline', cursive;
@@ -53,19 +68,7 @@ h1 {
   list-style-type: none;
   margin-top: -450px;
   width: 350px;
-}
-
-.board {
-  margin: 0 auto;
-  width: 60vh;
-  height: 60vh;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(3, auto);
-  border: 1px solid white;
   background-color: black;
-  box-shadow: pink 20px 15px;
 }
 
 .container {
@@ -110,7 +113,7 @@ h1 {
   perspective: 1000px;
   transform: rotateY(360deg);
   transform-style: preserve-3d;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .box {
@@ -151,18 +154,18 @@ h1 {
   color: white;
 }
 
-.img-X {
-  height: 280px;
-      width: 280px;
+/* .img-X {
+  height: 220px;
+      width: 220px;
       position: relative;
       left: 220px;
-      top: -340px;
+      top: -240px;
 }
 
 .img-O {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   position: relative;
-  left: 1380px;
+  left: 960px;
   bottom: 320px;
-  }
+  } */
