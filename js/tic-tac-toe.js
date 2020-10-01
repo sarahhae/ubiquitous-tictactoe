@@ -22,19 +22,32 @@ let noWin = 0;
 
 $(document).ready( function () {
 
-  // 1. clear board function
-  $('#newgame').on('click', function () {
+  $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
+    $('#main-gameboard').on('click').addClass('flip-board');
   });
 
-  // 2. new game / restart game function
-  $('#newgame').on('click', function () {
+  //  new game / restart game function
+  $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
+    $('#main-gameboard').on('click').addClass('flip-board');
     click = 0;
     winningPlayer = undefined;
   });
 
-  // 3. restart scoreboard / game function
+  $('#newgame').on('click', function () {
+    $('.box').removeClass('X O').empty();
+    $('#main-gameboard').on('click').addClass('flip-board');
+  });
+
+  $('#newgame').on('click', function () {
+    $('.box').removeClass('X O').empty();
+    $('#main-gameboard').on('click').addClass('flip-board');
+    click = 0;
+    winningPlayer = undefined;
+  });
+
+  // scoreboard counter
   const scoreBoard = function ( score ) {
     let player1Wins = $('#player1-score')
     let player2Wins = $('#player2-score')
@@ -61,11 +74,15 @@ $(document).ready( function () {
         console.log("player 1");
         turn = 2;
         $(this).addClass('X').text('X');
+        $('#player1').css({'backgroundColor': 'lightgreen', 'color': 'white'});
+        $('#player2').css({'backgroundColor': 'black', 'color': 'white'});
         checkWinner("X");
       } else {
         console.log("player 2");
         turn = 1;
         $(this).addClass('O').text('O');
+        $('#player2').css({'backgroundColor': 'lightgreen', 'color': 'white'});
+        $('#player1').css({'backgroundColor': 'black', 'color': 'white'});
         checkWinner("O");
       }
     }

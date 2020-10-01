@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 *, *: :before, *: ::after {
   box-sizing: border-box;
@@ -9,36 +10,52 @@ body {
 }
 
 h1 {
-  font-family: 'Alef', sans-serif;
-  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  /* text-align: center; */
   position: relative;
   padding: 1em;
+  padding-bottom: 0;
   font-size: 60px;
-  border: 1px;
+  /* border: 1px solid white; */
   margin: 0 auto;
+  display: table-caption;
   color: white;
+  margin-left: 0.3em;
+  /* margin-top: 150px; */
 }
 
-.player {
+.container-players h2 {
+  font-family: 'Bungee Outline', cursive;
+  color: white;
+  margin: 0.8em;
+  margin-bottom: 60px;
   display: inline-block;
-  position: relative;
-  border: 2px solid black;
-  border-radius: 20px;
-  padding: 0.2em;
-  font-size: 30px;
-  background: black;
-}
-
-ul {
-  border: 1px solid black;
-  border-radius: 10px;
-  display: inline-block;
-  justify-content: center;
-  text-align: center;
+  width: 227px;
+  border: 1px solid white;
   padding: 0.5em;
-  background-color: white;
+  font-size: 35px;
+  background: black;
+  box-shadow: blue 15px 10px;
+}
+
+.container-players {
   position: relative;
-  font-size: 60px;
+  text-align: center;
+}
+
+.scoreboard-container ul {
+  text-align: center;
+  font-family: 'Bungee Outline', cursive;
+  color: white;
+  margin: 3em;
+  margin-left: auto;
+  border: 1px solid white;
+  padding: 0.5em;
+  font-size: 39px;
+  box-shadow: yellow 15px 15px;
+  list-style-type: none;
+  margin-top: -450px;
+  width: 350px;
 }
 
 .board {
@@ -47,21 +64,61 @@ ul {
   height: 60vh;
   display: grid;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
   align-content: center;
   grid-template-columns: repeat(3, auto);
   border: 1px solid white;
   background-color: black;
-  border-radius: 35px;
+  box-shadow: pink 20px 15px;
 }
 
 .container {
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  /* align-items: center; */
+  /* align-content: center; */
+  height: 1200px;
+  border: 1px solid white;
+  margin: 1em;
+  /* background: black; */
   background-color: black;
+}
+
+.button-container button {
+  display: block;
+  text-align: center;
+  font-family: 'Bungee Outline', cursive;
+  color: white;
+  border: 1px solid white;
+  padding: 0.5em;
+  font-size: 39px;
+  box-shadow: crimson 15px 10px;
+  background: black;
+  margin-top: -100px;
+  width: 350px;
+}
+
+.playgame, .newgame {
+  margin: -5.5em;
+  margin-left: 150px;
+  transition: transform .2s;
+}
+
+.playgame:hover, .newgame:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transform: scale(1.1);
+}
+
+#main-gameboard {
+  transition: transform 2s;
+}
+
+.flip-board {
+  perspective: 1000px;
+  transform: rotateY(360deg);
+  transform-style: preserve-3d;
+  background-color: transparent;
 }
 
 .box {
@@ -69,11 +126,7 @@ ul {
   height: 100px;
   border: 1px solid white;
   display: inline-block;
-  /* justify-content: center;
-  align-items: center;
-  cursor: pointer; */
   text-align: center;
-
 }
 
 .box:first-child,
@@ -100,20 +153,24 @@ ul {
   border-right: none;
 }
 
-/* #player1.x:hover {
-  color: yellow;
-} */
-
-/* .box.active {
-  background-color: black;
-} */
-
 .X, .O {
   font-size: 60px;
   line-height: 95px;
   color: white;
 }
 
+.img-X {
+  height: 280px;
+      width: 280px;
+      position: relative;
+      left: 220px;
+      top: -340px;
+}
 
-
-/* ------------------------------------------------------- */
+.img-O {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  left: 1380px;
+  bottom: 320px;
+  }

@@ -14,44 +14,35 @@
   <div class="container">
 
     <header>
-      <h1>Ticcity-Taccity-Toe</h1>
+      <h1>Tic Tac Toe</h1>
     </header>
 
 
-<!-- --------- PLAYERS ------------ -->
+    <!-- --------- PLAYERS ------------ -->
 
-<div class="players">
-  <h2 class="player1" id="player1">Player 1<h2>
-  <h2 class="player2" id="player2">Player 2</h2>
-</div>
+    <div class="container-players">
+      <h2 class="player1" id="player1">Player 1</h2>
+      <h2 class="player2" id="player2">Player 2</h2>
+    </div>
 
 
-<!-- ------------ PLAYERS TURN MESSAGE ---------- -->
+    <!-- ------------ PLAYERS TURN MESSAGE ---------- -->
 
-<!-- <h4 id="screen" style="color: white;">
-          PLAYER 1 TURN FOLLOWS
-        </h4> -->
+    <!-- <h4 id="screen" style="color: white;">
+    PLAYER 1 TURN FOLLOWS
+  </h4> -->
 
-<!-- ----------- RESULT MESSAGE ------------ -->
+  <!-- ----------- RESULT MESSAGE ------------ -->
 
-<div class="winner-message" id="winner-message">
+  <!-- <div class="winner-message" id="winner-message">
   <p class="winner-player1" id="winner-player1">Player 1 <span class="win">WINS!</span></p>
   <p class="winner-player2" id="winner-2">Player 2 <span class="win">WINS!</span></p>
   <p class="draw" id="noplayer">It's a <span class="draw">DRAW!</span></p>
-</div>
-
-
-<!-- ----------- BUTTONS ------------ -->
-
-<div class="button" id="button">
-  <button class="playgame" id="playgame">Play Game</button>
-  <button class="newgame" id="newgame">New Game</button>
-</div>
-
+</div> -->
 
 <!-- ----------- GAME BOARD: 9 BOXES / GRID / 3x3 ------------ -->
 
-<main class="board" id="board">
+<main class="board" id="main-gameboard">
   <div class="box" id="1"></div>
   <div class="box" id="2"></div>
   <div class="box" id="3"></div>
@@ -63,19 +54,48 @@
   <div class="box" id="9"></div>
 </main>
 
+<!-- ----------- BUTTONS ------------ -->
+
+<div class="button-container">
+  <div class="button" id="button">
+    <button class="newgame" id="newgame">New Game</button>
+    <button class="playgame" id="playgame">Play</button>
+  </div>
+</div>
+
 <!-------------- SCOREBOARD ----------------->
 
-<footer class="scoreboard" id="scoreboard">
-  <ul>
-    <li class="score" id="player1-score">Player 1 : 0</li>
-    <li class="score" id="player2-score">Player 2 : 0</li>
-    <li class="score" id="noplayer-score">Draw : 0</li>
-  </ul>
-</footer>
+<div class="scoreboard-container">
+  <footer class="scoreboard" id="scoreboard">
+    <ul>
+      <li class="score" id="player1-score">Player 1 : 0</li>
+      <li class="score" id="player2-score">Player 2 : 0</li>
+      <li class="score" id="noplayer-score">Draw : 0</li>
+    </ul>
+  </footer>
+</div>
+
+<!-- <div>
+<img class="img-X" src="images/white-x-icon-png-2.png" alt="white-cross-image">
+</div> -->
+
+<div>
+<img class="img-X" src="images/skinny-X.png" alt="white-cross-image">
+</div>
+
+<!-- <div>
+<img class="img-O" src="images/O-white.png" alt="white-circle-image">
+</div> -->
+
+<div>
+<img class="img-O" src="images/O.png" alt="white-circle-image">
+</div>
+
+</div>
 
 <!-- --------------- END -------------------- -->
-      </div>
-  </body>
-  <script src="js/jquery.js"></script>
-  <script src="js/tic-tac-toe.js"></script>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/tic-tac-toe.js"></script>
 </html>
