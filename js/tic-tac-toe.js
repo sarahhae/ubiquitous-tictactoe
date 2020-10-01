@@ -22,12 +22,13 @@ let noWin = 0;
 
 $(document).ready( function () {
 
+  // ---------------------RESET BUTTON FUNCTIONS----------------------//
+
   $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
     $('#main-gameboard').on('click').addClass('flip-board');
   });
 
-  //  new game / restart game function
   $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
     $('#main-gameboard').on('click').addClass('flip-board');
@@ -47,7 +48,8 @@ $(document).ready( function () {
     winningPlayer = undefined;
   });
 
-  // scoreboard counter
+  // ---------------------SCOREBOARD COUNTER------------------------//
+
   const scoreBoard = function ( score ) {
     let player1Wins = $('#player1-score')
     let player2Wins = $('#player2-score')
@@ -59,7 +61,7 @@ $(document).ready( function () {
     }
   };
 
-  // -----------------------WORKING CODES BELOW----------------------//
+  // -----------------------BOARDGAME FUNCTION----------------------//
 
   $( ".box" ).on( 'click', function () {
     if (!$(this).hasClass('X') && !$(this).hasClass('O') && winningPlayer === undefined ) {
@@ -88,7 +90,8 @@ $(document).ready( function () {
     }
   });
 
-  // WINNING COMBINATION
+  // -----------------------WINNING COMBINATION----------------------//
+
   const checkWinner = function ( symbol ) {
 
     if ($('#1').hasClass(symbol) &&

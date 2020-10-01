@@ -11,17 +11,14 @@ body {
 
 h1 {
   font-family: 'Bungee Shade', cursive;
-  /* text-align: center; */
   position: relative;
   padding: 1em;
   padding-bottom: 0;
   font-size: 60px;
-  /* border: 1px solid white; */
   margin: 0 auto;
   display: table-caption;
   color: white;
   margin-left: 0.3em;
-  /* margin-top: 150px; */
 }
 
 .container-players h2 {
@@ -72,14 +69,9 @@ h1 {
 }
 
 .container {
-  /* justify-content: center; */
-  /* justify-items: center; */
-  /* align-items: center; */
-  /* align-content: center; */
   height: 1200px;
   border: 1px solid white;
   margin: 1em;
-  /* background: black; */
   background-color: black;
 }
 
