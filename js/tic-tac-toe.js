@@ -8,11 +8,9 @@ let drawCount = 0;
 
 $(document).ready( function () {
 
-  // ---------------------RESET BUTTON FUNCTIONS----------------------//
-
   $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
-    $('#main-gameboard').on('click').toggleClass('flip-board'); // .toggleClass for continuous flips one button is clicked.
+    $('#main-gameboard').on('click').toggleClass('flip-board');
     click = 0;
     winningPlayer = undefined;
   });
@@ -29,8 +27,6 @@ $(document).ready( function () {
     winningPlayer = undefined;
   });
 
-  // ---------------------SCOREBOARD COUNTER------------------------//
-
   const scoreBoard = function ( score ) {
     let player1Wins = $('#player1-score');
     let player2Wins = $('#player2-score');
@@ -44,11 +40,9 @@ $(document).ready( function () {
     }
   };
 
-  // -----------------------BOARDGAME FUNCTION----------------------//
-
   $( ".box" ).on( 'click', function () {
-    if (!$(this).hasClass('X') && !$(this).hasClass('O') && winningPlayer === undefined ) { // checks if a box is vacant, if not, places their marker in it and check for win or draw.
-      click++ // Adding player clicks
+    if (!$(this).hasClass('X') && !$(this).hasClass('O') && winningPlayer === undefined ) {
+      click++
 
       if ( click >= 9 ) {
         let draw = $('#noplayer-score')
@@ -72,8 +66,6 @@ $(document).ready( function () {
       }
     }
   });
-
-  // -----------------------WINNING COMBINATION----------------------//
 
   const checkWinner = function ( symbol ) {
 

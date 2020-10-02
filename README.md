@@ -32,7 +32,7 @@ The bug can be resolved with a `max-width` in the css container class.
 * New game button resets full game - scoreboard back to 0 and clear board.
 * Play and New Game button clears board with a flip-box functionality
 
-## BUGS, BUGS, MORE BUGS
+## Bugs, bugs, and more bugs
 
 I stumbled upon a lot of bugs on the way for creating this exciting, fun amazing game... The main a repeated problem was repeating a lot of lines and not using methods in the correct manner. As an example of the many, I had used ```.addclass('flip-board')``` which only worked once. Another issue with this function was, I had a repeating function for ```$('#newgame').on('click', function ()``` which did not allow me to continuously flip the board once the button had been clicked. This was resolved by using the ```.toggleClass()``` method and by deleting the repeated function. See below :
 
@@ -47,3 +47,7 @@ To be continued with more bugs I found along the way...
 ## Future Improvements
 
 Keeping my code DRY is the key skill for me to practice more often. Moving forward, I aim to continue on with this project as I get better with Javascript, jQuery and CSS. Also, naming variables in a proper manner is essential and something I need to work on more as I progress through the course.
+
+## Live Game
+
+Tic-tac-toe: https://sarahhae.github.io/ubiquitous-tictactoe/
