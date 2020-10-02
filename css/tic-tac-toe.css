@@ -50,7 +50,6 @@ nav.game-page a {
 }
 
 
-
 h1.tictactoe-purple {
   font-family: 'Bungee Shade', cursive;
   position: relative;
@@ -63,9 +62,8 @@ h1.tictactoe-purple {
   margin-left: 0.3em;
 }
 
-
-
 /* -------------TIC-TAC-TOE-------------- */
+
 *, *: :before, *: ::after {
   box-sizing: border-box;
 }
@@ -105,7 +103,6 @@ h1.tictactoe {
   text-align: center;
 }
 
-
 .board {
   margin: 0 auto;
   width: 60vh;
@@ -118,7 +115,6 @@ h1.tictactoe {
   background-color: black;
   box-shadow: pink 20px 15px;
 }
-
 
 .scoreboard-container ul {
   text-align: center;
@@ -161,7 +157,6 @@ button {
   outline: none;
 }
 
-
 .playgame, .newgame {
   margin: -5.5em;
   margin-left: 150px;
@@ -182,7 +177,6 @@ button {
   perspective: 1000px;
   transform: rotateY(360deg);
   transform-style: preserve-3d;
-  /* background-color: transparent; */
 }
 
 .box {
@@ -222,19 +216,3 @@ button {
   line-height: 95px;
   color: white;
 }
-
-/* .img-X {
-height: 220px;
-width: 220px;
-position: relative;
-left: 220px;
-top: -240px;
-}
-
-.img-O {
-height: 250px;
-width: 250px;
-position: relative;
-left: 960px;
-bottom: 320px;
-} */
