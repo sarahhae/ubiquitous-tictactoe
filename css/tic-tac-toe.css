@@ -1,6 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
+/* ---------------HOMEPAGE--------------- */
+
+body.homepage {
+  background-color: white;
+  margin: 0px auto;
+  padding: 1em;
+  text-align: center;
+  border: 1em solid #a20eff;
+  border: 1em solid #a20eff;
+  margin: 1em;
+  max-height: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+div.conatiner-homepage {
+  margin: 3em;
+  background-color: white;
+  opacity: 8;
+  padding: 1em;
+}
+
+nav.game-page a {
+  color: #a20eff;
+  background-color: white;
+  font-size: 40px;
+  padding: 1em;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #a20eff;
+  border-radius: 15px;
+  box-shadow: #a20eff 15px 12px 0px 0px;
+  margin-top: 150px;
+}
+
+.home-box1 {
+  width: 100px;
+  height: 500px;
+  background-color: #a20eff;
+  margin-left: 92px;
+}
+
+#social-media img {
+  width: 50px;
+  height: 50px;
+  margin-top: 1.2em;
+  color: white;
+}
+
+
+
+h1.tictactoe-purple {
+  font-family: 'Bungee Shade', cursive;
+  position: relative;
+  padding: 1em;
+  padding-bottom: 0;
+  font-size: 60px;
+  margin: 0 auto;
+  display: table-caption;
+  color: #a20eff;
+  margin-left: 0.3em;
+}
+
+
+
+/* -------------TIC-TAC-TOE-------------- */
 *, *: :before, *: ::after {
   box-sizing: border-box;
 }
@@ -9,7 +74,7 @@ body {
   margin: 0 auto;
 }
 
-h1 {
+h1.tictactoe {
   font-family: 'Bungee Shade', cursive;
   position: relative;
   padding: 1em;
@@ -83,14 +148,19 @@ h1 {
   text-align: center;
   font-family: 'Bungee Outline', cursive;
   color: white;
-  border: 1px solid white;
   padding: 0.5em;
   font-size: 39px;
   box-shadow: crimson 15px 10px;
   background: black;
   margin-top: -100px;
-  width: 350px;
+  width: 320px;
+  border-radius: 50px;
 }
+
+button {
+  outline: none;
+}
+
 
 .playgame, .newgame {
   margin: -5.5em;
@@ -101,7 +171,6 @@ h1 {
 .playgame:hover, .newgame:hover {
   background-color: white;
   color: black;
-  border: 1px solid black;
   transform: scale(1.1);
 }
 
@@ -155,17 +224,17 @@ h1 {
 }
 
 /* .img-X {
-  height: 220px;
-      width: 220px;
-      position: relative;
-      left: 220px;
-      top: -240px;
+height: 220px;
+width: 220px;
+position: relative;
+left: 220px;
+top: -240px;
 }
 
 .img-O {
-  height: 250px;
-  width: 250px;
-  position: relative;
-  left: 960px;
-  bottom: 320px;
-  } */
+height: 250px;
+width: 250px;
+position: relative;
+left: 960px;
+bottom: 320px;
+} */

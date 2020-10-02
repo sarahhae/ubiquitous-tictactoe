@@ -18,7 +18,7 @@ let click = 0;
 let winningPlayer;
 let player1count = 0;
 let player2count = 0;
-let noWin = 0;
+let drawCount = 0;
 
 $(document).ready( function () {
 
@@ -26,34 +26,64 @@ $(document).ready( function () {
 
   $('#playgame').on('click', function () {
     $('.box').removeClass('X O').empty();
-    $('#main-gameboard').on('click').addClass('flip-board');
-  });
-
-  $('#playgame').on('click', function () {
-    $('.box').removeClass('X O').empty();
-    $('#main-gameboard').on('click').addClass('flip-board');
+    $('#main-gameboard').on('click').toggleClass('flip-board');
     click = 0;
     winningPlayer = undefined;
   });
 
   $('#newgame').on('click', function () {
     $('.box').removeClass('X O').empty();
-    $('#main-gameboard').on('click').addClass('flip-board');
-  });
-
-  $('#newgame').on('click', function () {
-    $('.box').removeClass('X O').empty();
-    $('#main-gameboard').on('click').addClass('flip-board');
+    $('#main-gameboard').toggleClass('flip-board');
+    $('#player1').css({'backgroundColor': 'black', 'color': 'white'});
+    $('#player2').css({'backgroundColor': 'black', 'color': 'white'});
+    $('#player1-score').html(`Player 1 : 0`);
+    $('#player2-score').html(`Player 2 : 0`);
+    $('#noplayer-score').html(`Draw : 0`);
     click = 0;
     winningPlayer = undefined;
   });
+
+  // -----------------WINNING MESSAGE---------------//
+  //
+  // let player1count = 0;
+  // const player1win = function () {
+  //   $('.player1win').addClass('show');
+  //   $('.box').addClass('X');
+  //   player1count += 1
+  //   $('#player1-score').text(player1count);
+  //   $('.box').unbind();
+  //
+  //   $('.player1win').on('click', function (){
+  //     $('.player1win').removeClass('show');
+  //     $('.box').removeClass('X');
+  //     //call reset function ie reset();
+  //   });
+  //   return true;
+  // };
+  //
+  // let player2count = 0;
+  // const player2win = function () {
+  //   $('.player2win').addClass('show');
+  //   $('.box').addClass('O');
+  //   player1count += 1
+  //   $('#player2-score').text(player1count);
+  //   $('.box').unbind();
+  //
+  //   $('.player2win').on('click', function (){
+  //     $('.player2win').removeClass('show');
+  //     $('.box').removeClass('O');
+  //     //call reset function ie reset();
+  //   });
+  //   return true;
+  // };
+  //
 
   // ---------------------SCOREBOARD COUNTER------------------------//
 
   const scoreBoard = function ( score ) {
     let player1Wins = $('#player1-score')
     let player2Wins = $('#player2-score')
-    let noWin = $('#noplayer-score')
+    let drawCount = $('#noplayer-score')
     if ( score === 'X' ) {
       player1Wins.html(`Player 1 : ${player1count}`)
     } else if ( score === 'O' ) {
@@ -68,9 +98,9 @@ $(document).ready( function () {
       click++ // adding each time a click has been made
       console.log(click);
       if ( click >= 9 ) {
-        let drawCount = $('#noplayer-score')
-        noWin += 1;
-        drawCount.html(`Draw : ${noWin}`)
+        let draw = $('#noplayer-score')
+        drawCount += 1;
+        draw.html(`Draw : ${drawCount}`)
       }
       if ( turn === 1 ) {
         console.log("player 1");
